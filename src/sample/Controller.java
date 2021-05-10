@@ -2,14 +2,14 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 public class Controller {
     public Button btnMain;
-    int clicCounter = 0;
+    public TextField txtLicznik;
+    int clickCounter;
 
     public void onBtnAction(ActionEvent actionEvent) {
-        System.out.println("Kliknięcie nr " + ++clicCounter);
-        if (clicCounter == 1)
-            btnMain.setText("I jeszcze raz");
+        txtLicznik.setText("Licznik: " + ++clickCounter);
     }
 }
