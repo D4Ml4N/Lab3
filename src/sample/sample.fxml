@@ -1,8 +1,38 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="btnMain" defaultButton="true" layoutX="234.0" layoutY="180.0" mnemonicParsing="false" onAction="#onBtnAction" prefHeight="37.0" prefWidth="131.0" text="Kliknij mnie!" textFill="#e70606" underline="true" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="NW_RESIZE" />
+         </cursor>
+      </Button>
+   </children>
+   <effect>
+      <Lighting>
+         <bumpInput>
+            <Shadow blurType="TWO_PASS_BOX" />
+         </bumpInput>
+         <light>
+            <Light.Distant>
+               <color>
+                  <Color red="0.18199999630451202" green="0.699999988079071" blue="0.18798838555812836" />
+               </color>
+            </Light.Distant>
+         </light>
+      </Lighting>
+   </effect>
+</AnchorPane>
