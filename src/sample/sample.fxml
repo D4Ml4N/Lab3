@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <Button fx:id="btnMain" defaultButton="true" layoutX="234.0" layoutY="180.0" mnemonicParsing="false" onAction="#onBtnAction" prefHeight="37.0" prefWidth="131.0" text="Kliknij mnie!" textFill="#e70606" underline="true" wrapText="true">
-         <font>
-            <Font size="19.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="NW_RESIZE" />
-         </cursor>
-      </Button>
-      <TextField fx:id="txtLicznik" layoutX="226.0" layoutY="221.0" />
-   </children>
+<AnchorPane prefHeight="247.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <effect>
-      <Lighting>
+      <Lighting light="$null">
          <bumpInput>
-            <Shadow blurType="TWO_PASS_BOX" />
+            <ColorAdjust />
          </bumpInput>
-         <light>
-            <Light.Distant>
-               <color>
-                  <Color red="0.18199999630451202" green="0.699999988079071" blue="0.18798838555812836" />
-               </color>
-            </Light.Distant>
-         </light>
       </Lighting>
    </effect>
+   <children>
+      <Button fx:id="bWylicz" layoutX="121.0" layoutY="102.0" mnemonicParsing="false" onAction="#wylicz" text="Wylicz" />
+      <Text layoutX="17.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Promień walca:" />
+      <TextField fx:id="tfPromien" layoutX="109.0" layoutY="10.0" onAction="#wylicz" />
+      <Text layoutX="15.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grubość blachy:" />
+      <TextField fx:id="tfWysokosc" layoutX="109.0" layoutY="35.0" onAction="#wylicz" />
+      <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wysokość walca:" />
+      <TextField fx:id="tfGrubosc" layoutX="109.0" layoutY="61.0" onAction="#wylicz" />
+      <Text layoutX="9.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waga normalnej blachy:" />
+      <Text layoutX="10.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt normalnej blachy:" />
+      <Text layoutX="10.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waga nierdzewnej blachy:" />
+      <Text layoutX="11.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koszt nierdzewnej blachy:" />
+      <Label fx:id="lNormalnejWaga" layoutX="146.0" layoutY="139.0" />
+      <Label fx:id="lNormalnejKoszt" layoutX="146.0" layoutY="164.0" />
+      <Label fx:id="lNierdzewnejWaga" layoutX="157.0" layoutY="192.0" />
+      <Label fx:id="lNierdzewnejKoszt" layoutX="157.0" layoutY="215.0" />
+   </children>
 </AnchorPane>
